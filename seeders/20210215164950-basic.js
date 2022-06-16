@@ -38,6 +38,7 @@ module.exports = {
           name: `${adjective} ${noun}`,
           trip_id: trip.id,
           difficulty,
+          priorityNumber: i,
           created_at: new Date(),
           updated_at: new Date(),
         });

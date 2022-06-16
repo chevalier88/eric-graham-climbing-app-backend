@@ -34,4 +34,4 @@ const PORT = process.env.PORT || 3004;
 
 app.listen(PORT);
 
-console.log(`server listening on ${PORT}`);
+console.log(`backend server listening on ${PORT}`);
