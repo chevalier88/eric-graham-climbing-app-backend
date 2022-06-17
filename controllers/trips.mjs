@@ -11,7 +11,6 @@ export default function initTripsController(db) {
   };
 
   const submitTrip = async (request, response) => {
-    console.log(Object.keys(request));
     console.log('printing request.body received from front end...');
     console.log(request.body);
 
@@ -35,6 +34,7 @@ export default function initTripsController(db) {
       // response.sendStatus(200);
 
       // response.send('testing controller for submitTrip...');
+      console.log('only sending back the request.body first for now...');
       response.send(request.body);
     } catch (error) {
       console.log(error);

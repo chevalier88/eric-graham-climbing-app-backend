@@ -2,6 +2,7 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import methodOverride from 'method-override';
 import cors from 'cors';
+import bodyParser from 'body-parser';
 import bindRoutes from './routes.mjs';
 
 const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:3000';
@@ -21,6 +22,8 @@ app.set('view engine', 'ejs');
 app.use(cookieParser());
 // Bind Express middleware to parse request bodies for POST requests
 app.use(express.urlencoded({ extended: false }));
+
+app.use(bodyParser.json()); // <--- Here
 // Bind method override middleware to parse PUT and DELETE requests sent as POST requests
 app.use(methodOverride('_method'));
 // Expose the files stored in the public folder
