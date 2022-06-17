@@ -13,4 +13,6 @@ export default function bindRoutes(app) {
   app.get('/trips', TripsController.index);
 
   app.post('/trip', TripsController.submitTrip);
+
+  app.get('/trip/:id', RoutesController.getRoutesForOneTrip);
 }

@@ -15,27 +15,23 @@ export default function initTripsController(db) {
     console.log(request.body);
 
     try {
-      // const {
-      //   name,
-      // } = request.body;
+      const {
+        name,
+      } = request.body;
 
-      // const newTripObject = {
-      //   name,
-      // };
+      const newTripObject = {
+        name,
+      };
 
-      // console.log('printing newTripObject:');
-      // console.log(newTripObject);
+      console.log('printing newTripObject:');
+      console.log(newTripObject);
 
-      // const newTrip = await db.Request.create(newTripObject);
+      const newTrip = await db.Trip.create(newTripObject);
 
-      // const { id } = newTrip;
-      // console.log(`submitted trip id: ${id}`);
+      const { id } = newTrip;
+      console.log(`submitted trip id: ${id}`);
 
-      // response.sendStatus(200);
-
-      // response.send('testing controller for submitTrip...');
-      console.log('only sending back the request.body first for now...');
-      response.send(request.body);
+      response.sendStatus(200);
     } catch (error) {
       console.log(error);
       response.send(error);
